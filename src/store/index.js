@@ -23,22 +23,31 @@ export default new Vuex.Store({
     ADD_Ti(state, ti) {
       state.nu.unshift(ti)
     },
-    ADD_now(state,n){
-      if(state.now<state.nu.length-1){
-        state.now=state.now+n
-      }else{
+    ADD_now(state, n) {
+      if (state.now < state.nu.length - 1) {
+        state.now = state.now + n
+      } else {
         alert("没有下一题了")
       }
-     
+    },
+    RED_now(state, n){
+      if (state.now > 0) {
+        state.now = state.now - n
+      } else {
+        alert("没有上一题了")
+      }
     }
   },
   actions: {
-    create({commit}, ti) {
+    create({ commit }, ti) {
       commit('ADD_Ti', ti)
-   },
-   addNow({commit}, n) {
-    commit('ADD_now', n)
- }
+    },
+    redNow({ commit }, ti) {
+      commit('RED_now', ti)
+    },
+    addNow({ commit }, n) {
+      commit('ADD_now', n)
+    }
   },
   modules: {
   }

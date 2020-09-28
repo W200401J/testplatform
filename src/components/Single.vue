@@ -33,6 +33,7 @@
             'btn-block',
              now === 0 ? 'disabled' : '',
           ]"
+           @click="rednow"
         >
           上一题
         </button>
@@ -60,6 +61,9 @@ export default {
   methods: {
      addnow(){
       this.$store.dispatch("addNow", 1); 
+    },
+      rednow(){
+      this.$store.dispatch("redNow", 1); 
     }
   },
    
