@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home mt-5 ">
     <div class="container">
       <div class="jumbotron">
         <Single  />

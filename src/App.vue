@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <a class="navbar-brand" href="/">首页</a>
+    <router-link class="nav-link"  to="/">首页</router-link> |
     <button
       class="navbar-toggler d-lg-none"
       type="button"

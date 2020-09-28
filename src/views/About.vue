@@ -1,6 +1,10 @@
 <template>
-  <div class="about">
-    <Mytext />
+  <div class="about mt-5">
+    <div class="container">
+      <div class="jumbotron">
+        <Mytext />
+      </div>
+    </div>
   </div>
 </template>
 

@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="form-group">
+      <div class="form-group ml-3">
         <label>正确答案</label>
         <select class="form-control" v-model="right">
           <option>A</option>
