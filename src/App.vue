@@ -17,7 +17,7 @@
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
           <a class="nav-link" href="/about">
-            单选题
+            添加题库  
           </a>
         </li>
         <li class="nav-item active">

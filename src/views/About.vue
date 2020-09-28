@@ -1,5 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Mytext />
   </div>
 </template>
+
+
+<script>
+import Mytext from "../components/Mytext.vue";
+export default {
+  components: {
+    Mytext,
+  },
+};
+</script>
