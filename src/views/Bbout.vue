@@ -1,12 +1,16 @@
 <template>
-    <div>
-        111111
+    <div class="bbout">
+        <MyNav />
     </div>
 </template>
 
 <script>
+import MyNav from "../components/MyNav.vue";
+
 export default {
-    
+     components: {
+     MyNav,
+  },
 }
 </script>
 <style lang="css">

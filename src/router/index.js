@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Bbout from '../views/Bbout.vue'
-import Cbout from '../views/Cbout.vue'
 
 Vue.use(VueRouter)
 
@@ -25,11 +24,7 @@ const routes = [
     name: 'Bbout',
     component: Bbout
   },
-  {
-    path: '/cbout',
-    name: 'Cbout',
-    component: Cbout
-  },
+  
 ]
 
 const router = new VueRouter({
