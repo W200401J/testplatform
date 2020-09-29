@@ -48,20 +48,11 @@ export default new Vuex.Store({
         "D"
       )
     ],
-    cnu: [
-      new mu("谁是最靓的仔",
-        [{ A: "陈志宁" },
-        { B: "志宁陈" },
-        { C: "志宁" },
-        { D: "老陈" },],
-        "A"
-      ),
-    ],
+    cnu: [],
     now: 0,
     results: new Map(),
     chooses: [],
-    cj:[],
-    
+    cj:[]
   },
   mutations: {
     ADD_Ti(state, ti) {
