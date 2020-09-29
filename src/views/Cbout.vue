@@ -10,7 +10,6 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      
       <th scope="col">时间</th>
       <th scope="col">成绩</th>
     </tr>
@@ -18,7 +17,6 @@
   <tbody>
     <tr v-for="(item,index) in $store.state.cj" :key="index">
       <th scope="row">1</th>
-      
       <td>0:36秒</td>
       <td>{{item}}</td>
     </tr>
