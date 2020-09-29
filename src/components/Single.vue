@@ -115,7 +115,7 @@ export default {
       results: new Map(),
       now: 0,
       total: 0,
-      widths: 20,
+      widths: 0,
       color: ["success", "info", "warning", "danger", "primary"],
     };
   },
@@ -150,7 +150,7 @@ export default {
   },
   methods: {
     addnow() {
-      this.widths += 10;
+      this.widths += 20;
                     if(this.widths>100){
                         this.widths=100;
                     }
@@ -170,7 +170,7 @@ export default {
     },
     rednow() {
       //进度条进度
-      this.widths -= 10;
+      this.widths -= 20;
                     if (this.widths < 0) {
                         this.widths = 0;
                     }
