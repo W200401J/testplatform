@@ -147,7 +147,7 @@ export default {
           if (this.nu[entry[0]].right === entry[1]) {
             count++;
           }else{
-            this.cnu.push(entry[1]);
+            this.cnu.push(this.nu[entry[0]]);
             
           }
         }
@@ -155,7 +155,7 @@ export default {
           if (this.nu[entry[0]].right.join("") === entry[1].sort().join("")) {
             count++;
           }else{
-            this.cnu.push(entry[1]);
+            this.cnu.push(this.nu[entry[0]]);
           }
         }
       }
