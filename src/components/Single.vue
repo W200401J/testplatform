@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    
     <div class="container" v-if="defen">
       <div class="row mt-2 pt-2">
         <h1 class="display-3">完成</h1>
@@ -31,6 +32,12 @@
     </div>
 
     <div class="container" v-else>
+     <!-- 进度条 -->
+      <div class="progress">
+            <div :class="colors" role="progressbar"
+                :style="widthss"></div>
+       </div>          
+       <DateTime />
       <h1 class="display-3">{{ nu[now].title }}</h1>
       <hr class="my-2" />
       <div
@@ -85,8 +92,11 @@
   </div>
 </template>
 
+
+
 <script>
 import { mapState } from "vuex";
+import DateTime from './DateTime';
 export default {
   name: "Single",
   data() {
@@ -98,13 +108,44 @@ export default {
       results: new Map(),
       now: 0,
       total: 0,
+      widths: 20,
+      color: ["success", "info", "warning", "danger", "primary"],
     };
   },
+   components: {
+    
+     DateTime,
+  },
   computed: {
+    colors: function () {
+      if (this.widths <= 20) {
+        return `progress-bar progress-bar-striped progress-bar-animated bg-${this.color[0]}`;
+      }
+      if (this.widths > 20 && this.widths <= 40) {
+        return `progress-bar progress-bar-striped progress-bar-animated bg-${this.color[1]}`;
+      }
+      if (this.widths > 40 && this.widths <= 60) {
+        return `progress-bar progress-bar-striped progress-bar-animated bg-${this.color[2]}`;
+      }
+      if (this.widths > 60 && this.widths <= 80) {
+        return `progress-bar progress-bar-striped progress-bar-animated bg-${this.color[3]}`;
+      }
+      if (this.widths > 80) {
+        return `progress-bar progress-bar-striped progress-bar-animated bg-${this.color[4]}`;
+      }
+    },
+    widthss: function () {
+      return `width:${this.widths}%`;
+    },
     ...mapState(["nu", "chooses"]),
+
   },
   methods: {
     addnow() {
+      this.widths += 10;
+                    if(this.widths>100){
+                        this.widths=100;
+                    }
       this.results.set(this.now, this.choose);
       this.now++;
       this.$store.dispatch("addCh", this.choose);
@@ -120,6 +161,11 @@ export default {
       }
     },
     rednow() {
+      //进度条进度
+      this.widths -= 10;
+                    if (this.widths < 0) {
+                        this.widths = 0;
+                    }
       this.$store.dispatch("redNow", 1);
       this.now--;
       //获得前一题已选择的答案
