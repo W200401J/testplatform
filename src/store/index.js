@@ -86,6 +86,11 @@ export default new Vuex.Store({
     },
     ADD_CH(state, n) {
       state.chooses = n
+    },
+    to_Zero(state,n){
+      state.now=n,
+      state.results= new Map(),
+      state.chooses= []
     }
   },
   actions: {
@@ -100,6 +105,9 @@ export default new Vuex.Store({
     },
     addCh({ commit }, n) {
       commit('ADD_CH', n)
+    },
+    toZero({ commit }, n){
+      commit('to_Zero',n)
     }
   },
   modules: {

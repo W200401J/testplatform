@@ -6,9 +6,16 @@
         <h1 class="display-3">完成</h1>
       </div>
       <div class="row mt-2 pt-2" v-if="isScore">
-        <h2 class="display-4">得分:{{total}}</h2>
+        <h2 class="display-4">得分:{{ total }}</h2>
+        <button
+          type="button"
+          @click="tozero"
+          class="btn btn-primary btn-lg btn-block"
+        >
+          完成
+        </button>
       </div>
-     
+
       <div class="row mt-2 pt-2" v-else>
         <div class="col-6">
           <button
@@ -164,6 +171,14 @@ export default {
       this.isScore = true;
       this.$store.state.cj.push(this.total);
     },
+    tozero(){
+      this.now=0,
+      this.defen=false,
+      this.isScore= false,
+      this.choose= [],
+      this.results= new Map()
+      this.$store.dispatch("toZero",0);
+    }
   },
 };
 </script>
