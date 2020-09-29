@@ -45,7 +45,7 @@ export default {
         //    this.times =9000;
         
     }
-      console.log(leftTime)
+    //   console.log(leftTime)
       //定义变量 d,h,m,s保存倒计时的时间
       if (leftTime >= 0) {
         this.d = Math.floor(leftTime / 1000 / 60 / 60 / 24)//天数我没用到，暂且写上

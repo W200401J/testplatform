@@ -12,7 +12,7 @@
           @click="tozero"
           class="btn btn-primary btn-lg btn-block"
         >
-          完成
+          回到首页
         </button>
       </div>
 
@@ -115,7 +115,7 @@ export default {
       results: new Map(),
       now: 0,
       total: 0,
-      widths: 0,
+      widths: 20,
       color: ["success", "info", "warning", "danger", "primary"],
     };
   },
@@ -225,6 +225,7 @@ export default {
       this.choose= [],
       this.results= new Map()
       this.$store.dispatch("toZero",0);
+      this.$router.push('/');
     }
   },
 };

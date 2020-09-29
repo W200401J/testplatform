@@ -30,6 +30,11 @@ const routes = [
     name: 'Cbout',
     component: Cbout
   },
+  {
+    path:'/dati',
+    name:'Dati',
+    component: () => import('../views/Dati.vue')
+  }
   
 ]
 

@@ -1,32 +1,33 @@
 <template>
-  <div class="home">
+  <div>
     <MyNav />
     <div class="jumbotron">
-      <h1 class="display-3">脑筋急转弯测试平台</h1>
-      <span class="badge badge-pill badge-danger">请开始答题</span>
+      <div class="container">
+        
+        <h1 class="display-3">欢迎来到趣味小测试</h1>
+
+       
+
+      </div>
     </div>
     <div class="container">
-      <div class="jumbotron mt-5">
-        <Single  />
-      </div>
+       <button type="button" @click="dati" class="btn btn-primary btn-lg btn-block">开始答题</button>
     </div>
   </div>
 </template>
 
+
 <script>
-// @ is an alias to /src
-import Single from "../components/Single.vue";
 import MyNav from "../components/MyNav.vue";
 export default {
   name: "Home",
   components: {
-    Single,
-     MyNav,
+    MyNav,
   },
-  data() {
-    return {
-     
-    };
+  methods: {
+    dati(){
+      this.$router.push('/dati');
+    }
   },
-};
+}
 </script>
