@@ -1,7 +1,13 @@
 <template>
-  <div class="about mt-5">
+  <div class="about">
+    <MyNav />
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 class="display-3">扩展题库</h2>
+        </div>
+      </div>
+      <div class="jumbotron mt-5">
         <Mytext />
       </div>
     </div>

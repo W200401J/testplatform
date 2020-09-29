@@ -16,10 +16,13 @@
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="/about"> 历史记录 </a>
+            <a class="nav-link" href="/cbout"> 历史记录 </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/bbout"> 错题集 </a>
+          </li>
+           <li class="nav-item active">
+            <a class="nav-link" href="/about"> 扩展题库 </a>
           </li>
         </ul>
       </div>
