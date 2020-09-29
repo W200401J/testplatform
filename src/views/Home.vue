@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-     <MyNav />
+  <div class="home mt-5 ">
     <div class="container">
       <div class="jumbotron">
         <Single  />
