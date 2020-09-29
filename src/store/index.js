@@ -9,14 +9,7 @@ class mu {
       this.right = right
   }
 }
-class cmu {
-  constructor(title, ans, right, cright) {
-    this.title = title,
-      this.ans = ans,
-      this.right = right,
-      this.cright = cright
-  }
-}
+
 export default new Vuex.Store({
   state: {
     nu: [
@@ -55,18 +48,12 @@ export default new Vuex.Store({
         "D"
       )
     ],
-    cnu: [
-      new cmu("世界上什么东西比天高?",
-        [{ A: "飞机" },
-        { B: "火箭" },
-        { C: "宇宙飞船" },
-        { D: "心" },],
-        "D", "C"),
-
-    ],
+    cnu: [],
     now: 0,
     results: new Map(),
-    chooses: []
+    chooses: [],
+    cj:[]
+   
   },
   mutations: {
     ADD_Ti(state, ti) {
@@ -91,6 +78,11 @@ export default new Vuex.Store({
     },
     ADD_CH(state, n) {
       state.chooses = n
+    },
+    to_Zero(state,n){
+      state.now=n,
+      state.results= new Map(),
+      state.chooses= []
     }
   },
   actions: {
@@ -105,6 +97,9 @@ export default new Vuex.Store({
     },
     addCh({ commit }, n) {
       commit('ADD_CH', n)
+    },
+    toZero({ commit }, n){
+      commit('to_Zero',n)
     }
   },
   modules: {
