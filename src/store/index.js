@@ -2,26 +2,31 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-
+class mu {
+  constructor(title, ans, right) {
+      this.title = title,
+      this.ans = ans,
+      this.right = right
+  }
+}
 export default new Vuex.Store({
   state: {
     nu: [
-      {
-        title: "最长的河?",
-        ans: [
-          { A: "尼罗河" },
-          { B: "亚马逊河" },
-          { C: "长江" },
-          { D: "黄河" },
-        ],
-        right: "B",
-      },
+      new mu("最长的河?",
+        [{ A: "尼罗河" },
+        { B: "亚马逊河" },
+        { C: "长江" },
+        { D: "黄河" },],
+        "B"
+      )
     ],
     now: 0,
   },
   mutations: {
     ADD_Ti(state, ti) {
-      state.nu.unshift(ti)
+      state.nu.push(ti),
+      alert("到")
+
     },
     ADD_now(state, n) {
       if (state.now < state.nu.length - 1) {
@@ -30,7 +35,7 @@ export default new Vuex.Store({
         alert("没有下一题了")
       }
     },
-    RED_now(state, n){
+    RED_now(state, n) {
       if (state.now > 0) {
         state.now = state.now - n
       } else {
