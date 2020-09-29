@@ -9,14 +9,7 @@ class mu {
       this.right = right
   }
 }
-class cmu {
-  constructor(title, ans, right, cright) {
-    this.title = title,
-      this.ans = ans,
-      this.right = right,
-      this.cright = cright
-  }
-}
+
 export default new Vuex.Store({
   state: {
     nu: [
@@ -56,13 +49,13 @@ export default new Vuex.Store({
       )
     ],
     cnu: [
-      new cmu("世界上什么东西比天高?",
-        [{ A: "飞机" },
-        { B: "火箭" },
-        { C: "宇宙飞船" },
-        { D: "心" },],
-        "D", "C"),
-
+      new mu("历史上哪个人跑的最快?",
+        [{ A: "曹操" },
+        { B: "诸葛亮" },
+        { C: "秦始皇" },
+        { D: "程咬金" },],
+        "A"
+      ),
     ],
     now: 0,
     results: new Map(),

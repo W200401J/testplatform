@@ -5,7 +5,7 @@
       <h1 class="display-3">错题集</h1>
       <span class="badge badge-pill badge-success">错题数目：{{cnu.length}}</span>
     </div>
-
+    <span class="badge badge-pill badge-danger">以下是做错的题目</span>
     <div class="container">
       <div class="jumbotron" v-for="(item, index) in cnu" :key="index">
           <h1 class="display-3">{{item.title}}</h1>
@@ -16,10 +16,6 @@
             {{ String(Object.values(item)) }}
           </h3>
           <h3>正确答案是：{{ item.right }}</h3>
-          <p>
-            您选的答案是:<span class="badge badge-pill badge-danger">{{
-              item.cright}}</span>
-          </p>
       </div>
     </div>
   </div>

@@ -1,13 +1,14 @@
 <template>
   <div class="container">
+    <!-- 这里的事算分用的 -->
     <div class="container" v-if="defen">
       <div class="row mt-2 pt-2">
         <h1 class="display-3">完成</h1>
       </div>
       <div class="row mt-2 pt-2" v-if="isScore">
-        <h2 class="display-4">得分:{{ total }}</h2>
+        <h2 class="display-4">得分:{{total}}</h2>
       </div>
-      <!--正确答案与用户提交答案的对比-->
+     
       <div class="row mt-2 pt-2" v-else>
         <div class="col-6">
           <button
@@ -101,7 +102,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["nu", "chooses"]),
+    ...mapState(["nu", "chooses","cnu"]),
   },
   methods: {
     addnow() {
@@ -145,10 +146,16 @@ export default {
         if (this.nu[entry[0]].right.length === 1) {
           if (this.nu[entry[0]].right === entry[1]) {
             count++;
+          }else{
+            this.cnu.push(entry[1]);
+            
           }
-        } else {
+        }
+        else {
           if (this.nu[entry[0]].right.join("") === entry[1].sort().join("")) {
             count++;
+          }else{
+            this.cnu.push(entry[1]);
           }
         }
       }
