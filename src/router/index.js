@@ -30,6 +30,7 @@ const routes = [
     name: 'Cbout',
     component: Cbout
   },
+  
 ]
 
 const router = new VueRouter({

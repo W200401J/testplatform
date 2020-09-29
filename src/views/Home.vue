@@ -1,7 +1,12 @@
 <template>
-  <div class="home mt-5 ">
+  <div class="home">
+    <MyNav />
+    <div class="jumbotron">
+      <h1 class="display-3">在线考试平台</h1>
+      <span class="badge badge-pill badge-danger">请开始答题</span>
+    </div>
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron mt-5">
         <Single  />
       </div>
     </div>
@@ -11,10 +16,12 @@
 <script>
 // @ is an alias to /src
 import Single from "../components/Single.vue";
+import MyNav from "../components/MyNav.vue";
 export default {
   name: "Home",
   components: {
     Single,
+     MyNav,
   },
   data() {
     return {
