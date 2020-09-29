@@ -59,7 +59,9 @@ export default new Vuex.Store({
     ],
     now: 0,
     results: new Map(),
-    chooses: []
+    chooses: [],
+    cj:[],
+    
   },
   mutations: {
     ADD_Ti(state, ti) {

@@ -162,6 +162,7 @@ export default {
       this.total = (count / this.nu.length) * 100;
       this.total = this.total.toFixed(2);
       this.isScore = true;
+      this.$store.state.cj.push(this.total);
     },
   },
 };
