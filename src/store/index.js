@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 class mu {
   constructor(title, ans, right) {
-      this.title = title,
+    this.title = title,
       this.ans = ans,
       this.right = right
   }
@@ -21,15 +21,18 @@ export default new Vuex.Store({
       )
     ],
     now: 0,
+    results: new Map(),
+    chooses: []
   },
   mutations: {
     ADD_Ti(state, ti) {
       state.nu.push(ti),
-      alert("到")
+        alert("到")
 
     },
     ADD_now(state, n) {
       if (state.now < state.nu.length - 1) {
+        state.results.set(state.now, state.chooses);
         state.now = state.now + n
       } else {
         alert("没有下一题了")
@@ -38,9 +41,13 @@ export default new Vuex.Store({
     RED_now(state, n) {
       if (state.now > 0) {
         state.now = state.now - n
+        // 保存用户答案
       } else {
         alert("没有上一题了")
       }
+    },
+    ADD_CH(state,n){
+      state.chooses=n
     }
   },
   actions: {
@@ -52,6 +59,9 @@ export default new Vuex.Store({
     },
     addNow({ commit }, n) {
       commit('ADD_now', n)
+    },
+    addCh({ commit }, n){
+      commit('ADD_CH',n)
     }
   },
   modules: {

@@ -12,25 +12,25 @@
       <div class="col-lg-3">
         <div class="form-group">
           <label for="">A</label>
-          <input type="text" class="form-control" v-model="nowtimu.ans.A" />
+          <input type="text" class="form-control" v-model="nowtimu.ans[0].A" />
         </div>
       </div>
       <div class="col-lg-3">
         <div class="form-group">
           <label for="">B</label>
-          <input type="text" class="form-control" v-model="nowtimu.ans.B" />
+          <input type="text" class="form-control" v-model="nowtimu.ans[1].B" />
         </div>
       </div>
       <div class="col-lg-3">
         <div class="form-group">
           <label for="">C</label>
-          <input type="text" class="form-control" v-model="nowtimu.ans.C" />
+          <input type="text" class="form-control" v-model="nowtimu.ans[2].C" />
         </div>
       </div>
       <div class="col-lg-3">
         <div class="form-group">
           <label for="">D</label>
-          <input type="text" class="form-control" v-model="nowtimu.ans.D" />
+          <input type="text" class="form-control" v-model="nowtimu.ans[3].D" />
         </div>
       </div>
     </div>

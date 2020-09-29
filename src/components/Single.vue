@@ -8,12 +8,13 @@
       :key="index"
     >
       <div class="form-check">
-        <label class="form-check-label">
+        <label class="form-check-label" @click="isdis">
           <input
             type="radio"
             class="form-check-input"
             name="right"
             :value="String(Object.keys(item))"
+            v-model="choose"
           />
           <span class="badge badge-pill badge-primary">{{
             String(Object.keys(item))
@@ -25,24 +26,25 @@
     <div class="row mt-2 pt-2">
       <div class="col-6">
         <button
+          @click="rednow"
           type="button"
           :class="[
             'btn',
             'btn-danger',
             'btn-lg',
             'btn-block',
-             now === 0 ? 'disabled' : '',
+            now === 0 ? 'disabled' : '',
           ]"
-           @click="rednow"
         >
           上一题
         </button>
       </div>
       <div class="col-6">
         <button
+          @click="addnow"
           type="button"
           class="btn btn-primary btn-lg btn-block"
-          @click="addnow"
+          :disabled="isdisable"
         >
           下一题
         </button>
@@ -55,18 +57,39 @@
 import { mapState } from "vuex";
 export default {
   name: "Single",
+  data() {
+    return {
+      isdisable: true,
+      choose: [],
+      results: new Map(),
+      now: 0,
+    };
+  },
   computed: {
-    ...mapState(["nu", "now"]),
+    ...mapState(["nu", "chooses"]),
   },
   methods: {
-     addnow(){
-      this.$store.dispatch("addNow", 1); 
+    addnow() {
+      this.results.set(this.now, this.choose);
+      this.now++;
+      this.$store.dispatch("addCh", this.choose);
+      this.$store.dispatch("addNow", 1);
+      this.isdisable = true;
+      if (this.results.get(this.now)) {
+        this.choose = this.results.get(this.now);
+      } else {
+        this.choose = [];
+      }
     },
-      rednow(){
-      this.$store.dispatch("redNow", 1); 
-    }
+    rednow() {
+      this.$store.dispatch("redNow", 1);
+      this.now--;
+      //获得前一题已选择的答案
+      this.choose = this.results.get(this.now);
+    },
+    isdis() {
+      this.isdisable = false;
+    },
   },
-   
- 
 };
 </script>
