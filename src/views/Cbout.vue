@@ -15,9 +15,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(item,index) in $store.state.cj" :key="index">
-      <th scope="row">1</th>
-      <td>0:36秒</td>
+    <tr v-for="(item,index) in $store.state.cj" :key="index" >
+      <th scope="row">{{index+1}}</th>
+      <td>{{(index+1)*8}}秒</td>
       <td>{{item}}</td>
     </tr>
     

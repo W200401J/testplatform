@@ -170,6 +170,7 @@ export default {
       this.total = this.total.toFixed(2);
       this.isScore = true;
       this.$store.state.cj.push(this.total);
+     
     },
     tozero(){
       this.now=0,
