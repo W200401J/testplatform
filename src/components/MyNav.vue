@@ -11,18 +11,17 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="/cbout"> 历史记录 </a>
+            <router-link class="nav-link" to="/bbout">错题集</router-link>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/bbout"> 错题集 </a>
+            <router-link class="nav-link" to="/cbout">历史记录</router-link>
           </li>
-           <li class="nav-item active">
-             <router-link class="nav-link" to="/about">扩展题库</router-link>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/about">扩展题库</router-link>
           </li>
         </ul>
       </div>

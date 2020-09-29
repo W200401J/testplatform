@@ -9,6 +9,14 @@ class mu {
       this.right = right
   }
 }
+class cmu {
+  constructor(title, ans, right,cright) {
+      this.title = title,
+      this.ans = ans,
+      this.right = right,
+      this.cright=cright
+  }
+}
 export default new Vuex.Store({
   state: {
     nu: [
@@ -19,6 +27,20 @@ export default new Vuex.Store({
         { D: "黄河" },],
         "B"
       )
+    ],
+    cnu:[
+      new cmu("最长的河?",
+      [{ A: "尼罗河" },
+      { B: "亚马逊河" },
+      { C: "长江" },
+      { D: "黄河" },],
+      "B","D"),
+      new cmu("最帅的男明星?",
+      [{ A: "宋小宝" },
+      { B: "刘德华" },
+      { C: "潘长江" },
+      { D: "吴彦祖" },],
+      "A","B"),
     ],
     now: 0,
     results: new Map(),
