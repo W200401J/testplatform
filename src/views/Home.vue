@@ -2,7 +2,7 @@
   <div class="home">
     <MyNav />
     <div class="jumbotron">
-      <h1 class="display-3">在线考试平台</h1>
+      <h1 class="display-3">脑筋急转弯测试平台</h1>
       <span class="badge badge-pill badge-danger">请开始答题</span>
     </div>
     <div class="container">

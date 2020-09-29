@@ -10,37 +10,59 @@ class mu {
   }
 }
 class cmu {
-  constructor(title, ans, right,cright) {
-      this.title = title,
+  constructor(title, ans, right, cright) {
+    this.title = title,
       this.ans = ans,
       this.right = right,
-      this.cright=cright
+      this.cright = cright
   }
 }
 export default new Vuex.Store({
   state: {
     nu: [
-      new mu("最长的河?",
-        [{ A: "尼罗河" },
-        { B: "亚马逊河" },
-        { C: "长江" },
-        { D: "黄河" },],
-        "B"
+      new mu("历史上哪个人跑的最快?",
+        [{ A: "曹操" },
+        { B: "诸葛亮" },
+        { C: "秦始皇" },
+        { D: "程咬金" },],
+        "A"
+      ),
+      new mu("小白加小白等于什么？",
+        [{ A: "小白" },
+        { B: "小白小白" },
+        { C: "小小白" },
+        { D: "小白兔" },],
+        "D"
+      ),
+      new mu("米她妈是谁?",
+        [{ A: "花" },
+        { B: "稻谷" },
+        { C: "种子" },
+        { D: "水" },],
+        "A"
+      ),
+      new mu("用椰子和西瓜打头谁比较痛?",
+        [{ A: "椰子" },
+        { B: "西瓜" },
+        { C: "都痛" },
+        { D: "头" },],
+        "D"
+      ), new mu("世界上什么东西比天高?",
+        [{ A: "飞机" },
+        { B: "火箭" },
+        { C: "宇宙飞船" },
+        { D: "心" },],
+        "D"
       )
     ],
-    cnu:[
-      new cmu("最长的河?",
-      [{ A: "尼罗河" },
-      { B: "亚马逊河" },
-      { C: "长江" },
-      { D: "黄河" },],
-      "B","D"),
-      new cmu("最帅的男明星?",
-      [{ A: "宋小宝" },
-      { B: "刘德华" },
-      { C: "潘长江" },
-      { D: "吴彦祖" },],
-      "A","B"),
+    cnu: [
+      new cmu("世界上什么东西比天高?",
+        [{ A: "飞机" },
+        { B: "火箭" },
+        { C: "宇宙飞船" },
+        { D: "心" },],
+        "D", "C"),
+
     ],
     now: 0,
     results: new Map(),
@@ -49,15 +71,14 @@ export default new Vuex.Store({
   mutations: {
     ADD_Ti(state, ti) {
       state.nu.push(ti),
-        alert("到")
-
+        alert("是否添加这道题？")
     },
     ADD_now(state, n) {
       if (state.now < state.nu.length - 1) {
         state.results.set(state.now, state.chooses);
         state.now = state.now + n
       } else {
-        alert("没有下一题了")
+        alert("做完了")
       }
     },
     RED_now(state, n) {
@@ -68,8 +89,8 @@ export default new Vuex.Store({
         alert("没有上一题了")
       }
     },
-    ADD_CH(state,n){
-      state.chooses=n
+    ADD_CH(state, n) {
+      state.chooses = n
     }
   },
   actions: {
@@ -82,8 +103,8 @@ export default new Vuex.Store({
     addNow({ commit }, n) {
       commit('ADD_now', n)
     },
-    addCh({ commit }, n){
-      commit('ADD_CH',n)
+    addCh({ commit }, n) {
+      commit('ADD_CH', n)
     }
   },
   modules: {
